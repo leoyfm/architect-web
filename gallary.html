@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap demo</title>
+  <link href="assets/bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+  <style lang="css">
+    body {
+      font-family: Montserrat, sans-serif;
+    }
+
+    header {
+      letter-spacing: .2em;
+    }
+
+    .header_node {
+      position: relative;
+      display: block;
+    }
+
+    .header_line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 1px;
+      overflow: hidden;
+      padding-top: 1.5rem;
+    }
+
+    .header_line,
+    .header_line span {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 1px;
+    }
+
+    .header_line span {
+      border-bottom-width: 1px;
+      --border-opacity: 1;
+      border-color: #000;
+      border-color: rgba(0, 0, 0, var(--border-opacity));
+      border-style: solid;
+      border-color: silver;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+    }
+
+    .header_line span:first-child {
+      opacity: 0;
+      transform: translateX(-102%);
+    }
+
+    .header_node:hover .header_line span:first-child {
+      opacity: 1;
+      transform: translateX(0);
+      transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .header_line span:last-child {
+      opacity: 1;
+      transform: translateX(102%);
+      transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .header_node:hover .header_line span:last-child {
+      opacity: 0;
+      transform: translateX(0);
+      transition: none;
+    }
+
+    .contact {}
+
+    .contact h2 {
+      font-size: 1.125rem;
+    }
+
+    .contact .desc {
+      --text-opacity: 1;
+      color: rgba(107, 107, 107, var(--text-opacity));
+    }
+
+    .banner img {
+      /* padding-top: 0; */
+      min-height: 16rem;
+      height: calc(80vh - 8rem);
+    }
+
+    footer {
+      background-color: var(--bs-tertiary-bg);
+      ;
+    }
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#nav-category" data-bs-smooth-scroll="true"
+  data-bs-root-margin="0px 0px -40%" data-bs-offset="25">
+  <header class="bg-body-tertiary">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary pt-4 pb-4" style="height: 8rem;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">name</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+              <li class="nav-item px-3">
+                <a class="nav-link active header_node fw-lighter" aria-current="page" href="/gallary.html">GALLARY
+                  <span class="header_line">
+                    <span></span>
+                    <span></span>
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link header_node fw-bold fs-6 text-dark" href="#">CONTACT
+                  <span class="header_line">
+                    <span></span>
+                    <span></span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container mt-4">
+    <div id="nav-category" class="d-flex flex-column">
+      <a class="p-0 rounded text-body-tertiary" href="#kitchen">ketchen</a>
+      <a class="p-0 rounded text-body-tertiary" href="#living">living</a>
+      <a class="p-0 rounded text-body-tertiary" href="#wardrobe">wardrobe</a>
+    </div>
+
+    <div id="spy-container" class="gallary container-fluid fw-lighter" style="font-size: 0.8rem;"
+      class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+      <div class="row">
+        <div class="col-12">
+          <div class="row img-container" data-masonry='{"percentPosition": true }'>
+            <div class="col-md-3">
+              <div class="thumbnail opacity-50">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/213.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="">
+                  <span class="fw-lighter">标题</span>
+                </section>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/counter.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>标题</span>
+                </section>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/desk.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>标题</span>
+                </section>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/Kitchen.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>标题</span>
+                </section>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/Kitchen1.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>标题</span>
+                </section>
+              </div>
+            </div>
+            <div class="col-md-3" id="kitchen">
+              <div class="thumbnail">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/Kitchen2.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>标题</span>
+                </section>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail" id="simple-list-item-5">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/Kitchen3.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>标题</span>
+                </section>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/Kitchen5.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>标题</span>
+                </section>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/Kitchen6.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>标题</span>
+                </section>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/Kitchen7.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>标题</span>
+                </section>
+              </div>
+            </div>
+            <div class="col-md-3" id="living">
+              <div class="thumbnail">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/Kitchen8.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>标题</span>
+                </section>
+              </div>
+            </div>
+
+
+            <div class="col-md-3" id="living">
+              <div class="thumbnail">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/wardrobe.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>wardrobe</span>
+                </section>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="thumbnail" id="wardrobe">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/wardrobe4.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>标题</span>
+                </section>
+              </div>
+            </div>
+            <div class="col-md-3" id="living">
+              <div class="thumbnail">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/wardrobe1.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>标题</span>
+                </section>
+              </div>
+            </div>
+            <div class="col-md-3" id="living">
+              <div class="thumbnail">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/wardrobe2.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>标题</span>
+                </section>
+              </div>
+            </div>
+            <div class="col-md-3" id="living">
+              <div class="thumbnail">
+                <a title="img" href="javascript:void(0);">
+                  <img alt="" src="assets/image/gallary/wardrobe3.jpg" class="img-fluid img-thumbnail" />
+                </a>
+                <section class="caption">
+                  <span>标题</span>
+                </section>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="mt-5 text-black-600 text-xs py-3 z-1">
+    <div class="container-fluid">
+      <div class="row text-body-tertiary" style="font-size: 0.8rem;">
+        <div class="col-3">© 2024 Corben Architects. All Rights Reserved.</div>
+        <div class="col">Facebook | Instagram</div>
+        <div class="col">(02) 9904 1844</div>
+        <div class="col">Subscribe</div>
+        <div class="col">Site by All Things Visual</div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script>
+    var el = window.document.body;
+    var imgs = window.document.querySelectorAll(".thumbnail");
+    imgs.forEach(function (img) {
+      img.classList.add("opacity-50");
+      img.getElementsByTagName("section")[0].classList.add("opacity-0");
+    });
+    window.document.addEventListener("mousemove", function (e) {
+      el = e.target;
+      if (el.classList[1] === "img-thumbnail") {
+        imgs.forEach(function (img) {
+          img.classList.remove("opacity-100");
+          img.classList.add("opacity-50");
+          img.getElementsByTagName("section")[0].classList.add("opacity-0");
+        });
+        el.parentElement.parentElement.classList.remove("opacity-50");
+        el.parentElement.parentElement.classList.add("opacity-100");
+        el.parentElement.nextElementSibling.classList.remove("opacity-0");
+      } else if (el.classList[1] === "row" || el.classList[1] === undefined) {
+        imgs.forEach(function (img) {
+          img.classList.add("opacity-100");
+          // img.classList.add("opacity-50");
+          img.getElementsByTagName("section")[0].classList.add("opacity-0");
+        });
+      } else {
+      }
+      console.log("moveover", el.classList[0]);
+    });
+
+
+  </script>
+</body>
+
+</html>

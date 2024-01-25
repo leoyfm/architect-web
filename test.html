@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap demo</title>
+  <link href="assets/bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style lang="css">
+    body {
+      font-family: Montserrat, sans-serif;
+    }
+
+    header {
+      letter-spacing: .2em;
+    }
+
+    .header_node {
+      position: relative;
+      display: block;
+    }
+
+    .header_line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 1px;
+      overflow: hidden;
+      padding-top: 1.5rem;
+    }
+
+    .header_line,
+    .header_line span {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 1px;
+    }
+
+    .header_line span {
+      border-bottom-width: 1px;
+      --border-opacity: 1;
+      border-color: #000;
+      border-color: rgba(0, 0, 0, var(--border-opacity));
+      border-style: solid;
+      border-color: silver;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+    }
+
+    .header_line span:first-child {
+      opacity: 0;
+      transform: translateX(-102%);
+    }
+
+    .header_node:hover .header_line span:first-child {
+      opacity: 1;
+      transform: translateX(0);
+      transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .header_line span:last-child {
+      opacity: 1;
+      transform: translateX(102%);
+      transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .header_node:hover .header_line span:last-child {
+      opacity: 0;
+      transform: translateX(0);
+      transition: none;
+    }
+
+    .contact {}
+
+    .contact h2 {
+      font-size: 1.125rem;
+    }
+
+    .contact .desc {
+      --text-opacity: 1;
+      color: rgba(107, 107, 107, var(--text-opacity));
+    }
+
+    .banner img {
+      /* padding-top: 0; */
+      min-height: 16rem;
+      height: calc(80vh - 8rem);
+    }
+
+    footer {
+      background-color: var(--bs-tertiary-bg);
+      ;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-4">
+      <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+        <a class="p-1 rounded" href="#simple-list-item-1">Item 1</a>
+        <a class="p-1 rounded" href="#simple-list-item-2">Item 2</a>
+        <a class="p-1 rounded" href="#simple-list-item-3">Item 3</a>
+        <a class="p-1 rounded" href="#simple-list-item-4">Item 4</a>
+        <a class="p-1 rounded" href="#simple-list-item-5">Item 5</a>
+      </div>
+    </div>
+    <div class="col-8" style="height: 300px;overflow-y: scroll">
+      <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true"
+        class="scrollspy-example" tabindex="0">
+        <h4 id="simple-list-item-1">Item 1</h4>
+        <p>...</p>
+        <h4 id="simple-list-item-2">Item 2</h4>
+        <p>...</p>
+        <h4 id="simple-list-item-3">Item 3</h4>
+        <p>...</p>
+        <h4 id="simple-list-item-4">Item 4</h4>
+        <p>...</p>
+        <h4 id="simple-list-item-5">Item 5</h4>
+        <p>...</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
