@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>demo</title>
+  <link href="assets/bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
+
+  <style lang="css">
+    body {
+      font-family: Montserrat, sans-serif;
+    }
+
+    header {
+      letter-spacing: .2em;
+    }
+
+    .header_node {
+      position: relative;
+      display: block;
+    }
+
+    .header_line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 1px;
+      overflow: hidden;
+      padding-top: 1.5rem;
+    }
+
+    .header_line,
+    .header_line span {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 1px;
+    }
+
+    .header_line span {
+      border-bottom-width: 1px;
+      --border-opacity: 1;
+      border-color: #000;
+      border-color: rgba(0, 0, 0, var(--border-opacity));
+      border-style: solid;
+      border-color: silver;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+    }
+
+    .header_line span:first-child {
+      opacity: 0;
+      transform: translateX(-102%);
+    }
+
+    .header_node:hover .header_line span:first-child {
+      opacity: 1;
+      transform: translateX(0);
+      transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .header_line span:last-child {
+      opacity: 1;
+      transform: translateX(102%);
+      transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .header_node:hover .header_line span:last-child {
+      opacity: 0;
+      transform: translateX(0);
+      transition: none;
+    }
+
+    .contact {}
+
+    .contact h2 {
+      font-size: 1.125rem;
+    }
+
+    .contact .desc {
+      --text-opacity: 1;
+      color: rgba(107, 107, 107, var(--text-opacity));
+    }
+
+    .banner img {
+      /* padding-top: 0; */
+      min-height: 16rem;
+      height: calc(80vh - 8rem);
+    }
+
+    footer {
+      background-color: var(--bs-tertiary-bg);
+      ;
+    }
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
+  <header class="bg-body-tertiary">
+    <div class="container">
+      <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary pt-4 pb-4" style="height: 8rem;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://leoyfm.github.io/architect-web">
+            <img src="assets/image/logo.jpg" alt="logo" height="40rem" />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+              <li class="nav-item px-3">
+                <a class="nav-link header_node fw-lighter" aria-current="page"
+                  href="https://leoyfm.github.io/architect-web/index.html">HOME
+                  <span class="header_line">
+                    <span></span>
+                    <span></span>
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link active header_node fw-lighter" aria-current="page"
+                  href="https://leoyfm.github.io/architect-web/gallary.html">GALLARY
+                  <span class="header_line">
+                    <span></span>
+                    <span></span>
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link header_node fw-bold fs-6 text-dark" href="#contact">CONTACT
+                  <span class="header_line">
+                    <span></span>
+                    <span></span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+  </header>
+  <section class="banner pb-2">
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/image/contact/Contact.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="assets/image/contact/Contact2.jpg" class="d-block w-100" alt="..." />
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+  <section class="contact mt-5 container fw-lighter" id="contact">
+    <div class="row">
+      <div class="col col-md-12">
+        <div class="row">
+          <div class="col">
+            <h2>Find us</h2>
+            <p class="desc">
+              Our office is on the ground floor on the western side of the
+              building. The entrance is on Barry Street (not Yeo St). There is
+              metered parking on Barry Street and a 2-storey, 2-hour limit car
+              park opposite the office, entered from Olive Lane and Barry
+              Street.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <h2>From the City South</h2>
+          <p class="desc">
+            Sydney Harbour Tunnel or Bridge on the M1 | Take the Mosman exit
+            (the inside lane) | Right onto Military Road | Right onto Watson
+            St | Left onto Yeo St | Left onto Barry St
+          </p>
+        </div>
+        <div class="row">
+          <h2>From the North East</h2>
+          <p class="desc">
+            West onto Military Rd | Left onto Wycombe Rd | Right onto Yeo St |
+            Right onto Barry St
+          </p>
+        </div>
+      </div>
+      <div class="col"></div>
+      <div class="col col-md-12">
+        <h2>Contact</h2>
+        <p>123 Orchard Road, Chester Hill, NSW 2162</p>
+        <p>0405 12 13 14</p>
+        <p><a href="mailto:info@zensejoinery.com.au" class="text-dark">Email:info@zensejoinery.com.au</a></p>
+      </div>
+    </div>
+  </section>
+  <section class="map mt-5 mb-2">
+    <div class="container-fluid">
+      <img src="assets/image/map.png" class="w-100" mode="scaleToFill" />
+    </div>
+  </section>
+  <footer class="mt-5 text-black-600 text-xs py-3 z-1">
+    <div class="container-fluid">
+      <div class="row text-body-tertiary" style="font-size: 0.8rem;">
+        <div class="col-3">© 2024 Corben Architects. All Rights Reserved.</div>
+        <div class="col">Facebook | Instagram</div>
+        <div class="col">(02) 9904 1844</div>
+        <div class="col">Subscribe</div>
+        <div class="col">Site by All Things Visual</div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
